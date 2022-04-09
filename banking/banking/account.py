@@ -34,4 +34,3 @@ class Account:
         statement.append("date || credit || debit || balance")
         statement.reverse()
         print("\n".join(statement))
-        return "\n".join(statement)
