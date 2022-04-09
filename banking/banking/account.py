@@ -1,2 +1,3 @@
 class Account:
-    pass
+    def deposit(self, amount: int):
+        pass
