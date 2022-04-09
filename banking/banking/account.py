@@ -16,3 +16,17 @@ class Account:
         for t in self._transactions:
             balance += t[0]
         return balance
+
+    def print_statement(self) -> str:
+        statement = []
+        balance = 0
+        for t in self._transactions:
+            balance += t[0]
+            if t[0] > 0:
+                statement.append("{0} || {1} || || {2}".format(t[1], t[0], balance))
+            else:
+                statement.append("{0} || || {1} || {2}".format(t[1], -t[0], balance))
+        statement.append("date || credit || debit || balance")
+        statement.reverse()
+        print("\n".join(statement))
+        return "\n".join(statement)
