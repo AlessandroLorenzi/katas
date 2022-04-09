@@ -1,3 +1,4 @@
+from datetime import datetime
 class Account:
     def __init__(self):
         self._transactions = []
@@ -9,6 +10,8 @@ class Account:
         self._add_transaction(-amount, date)
 
     def _add_transaction(self, amount: int, date: str = ""):
+        if date == "":
+            date = datetime.today().strftime("%d/%m/%Y")
         self._transactions.append((amount, date))
 
     def get_balance(self) -> int:
